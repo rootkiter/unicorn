@@ -2075,10 +2075,11 @@ store_helper(CPUArchState *env, target_ulong addr, uint64_t val,
     }
 
     /* Handle CPU specific unaligned behaviour */
-    if (addr & ((1 << a_bits) - 1)) {
-        cpu_unaligned_access(env_cpu(env), addr, MMU_DATA_STORE,
-                             mmu_idx, retaddr);
-    }
+    // if (addr & ((1 << a_bits) - 1)) {
+    //     printf("unaligned %x %x\n", addr, (1<<a_bits) -1);
+    //     cpu_unaligned_access(env_cpu(env), addr, MMU_DATA_STORE,
+    //                          mmu_idx, retaddr);
+    // }
 
     /* If the TLB entry is for a different page, reload and try again.  */
     if (!tlb_hit(env->uc, tlb_addr, addr)) {

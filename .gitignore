@@ -12,6 +12,7 @@
 *.jar
 *.gem
 *~
+cscope.*
 
 qemu/*-softmmu/
 
